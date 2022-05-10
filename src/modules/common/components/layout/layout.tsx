@@ -21,6 +21,7 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
       <Header />
       <AppContent>{children}</AppContent>
       <Footer />
+     
     </AppLayout>
   );
 };

@@ -1,11 +1,8 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
-import { Tab, Tabs, Typography } from "@material-ui/core";
-import { useState } from "react";
-import { BucketList } from "../modules/list-by-user/list";
+import { BucketList } from "../modules/list-by-user/components/list";
 
 const Home: NextPage = () => {
-  const users = ["Abha", "Deepti"];
+  const users = ["Abha", "Manish"];
   const items = [
     [
       { id: 1, value: "NY" },

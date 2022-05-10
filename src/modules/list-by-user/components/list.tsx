@@ -74,9 +74,11 @@ export const BucketList: React.FC<BucketListProps> = ({ users, items }) => {
             <TabPanel value={value} index={idx} key={`item_${idx}`}>
               {item.map((d, idx: number) => (
                 <ListValueButton key={`key_${idx}`}>
-                  <ListValueText variant="h6">{d.value}</ListValueText>
+                  <Typography variant="h6">{d.value}</Typography>
                   {idx === item.length - 1 && (
-                    <Button>Add {<AddCircleOutlineOutlined />}</Button>
+                    <Link href="/update-list">
+                      <ListLink/>
+                    </Link>
                   )}
                 </ListValueButton>
               ))}
@@ -96,7 +98,9 @@ const ListValueButton = styled.div`
   margin-bottom: 20px !important;
 `;
 
-const ListValueText = styled(Typography)``;
+const ListLink = styled(AddCircleOutlineOutlined)`
+  padding-right: 10px;
+`;
 
 const ListValueContainer = styled.div`
   padding-left: 50px;

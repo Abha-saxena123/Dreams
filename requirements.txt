@@ -4,7 +4,7 @@ user should be able to mark item done
 after click on the item in the list it should display
    1. Header
    2. Description
-   3. Image if any
+   3. Image if any -Later
    4. Remarks optional
 
 When user mark it done, it can add experience with that -later
