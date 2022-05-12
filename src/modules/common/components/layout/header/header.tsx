@@ -4,7 +4,7 @@ import {
   HeaderContainer,
   HeaderLogoContainer,
   HeaderLink,
-  HeaderLinkContainer,
+  HeaderLinkContainer
 } from "./header.styles";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -13,7 +13,7 @@ import { Typography } from "@material-ui/core";
 export const Header: React.FC = () => {
   const router = useRouter();
 
-  const links = ["/", "/addItems"];
+  const links = ["/", "/update-list"];
   const linkValue = ["List", "Add Items"];
 
   return (

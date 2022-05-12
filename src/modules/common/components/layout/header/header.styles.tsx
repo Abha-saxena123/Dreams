@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
   background-color: darkcyan;
 `;
 
+
 export const HeaderLogoContainer = styled.div`
   margin: 0 30px;
   border-radius: 6px;
