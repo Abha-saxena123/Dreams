@@ -1,11 +1,8 @@
 import { useForm } from "react-hook-form";
-import { UpdateFormWrapper, StyledInput, FormSubmitButton } from "./update-form.styles";
+import { FormDataInterface } from "../types/update-form.types";
+import { UpdateFormWrapper, StyledInput, FormSubmitButton } from "./update.styles";
 
-interface FormDataInterface {
-  header: string;
-  description: string;
-  remarks?: string;
-}
+
 
 export const UpdateItemFrom: React.FC = () => {
   const { register, handleSubmit } = useForm();

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { BucketList } from "../modules/list-by-user/components/list";
 
 const Home: NextPage = () => {
-  const users = ["Abha", "Manish"];
+  const users = ["Abha", "Deepti"];
   const items = [
     [
       { id: 1, value: "NY" },
