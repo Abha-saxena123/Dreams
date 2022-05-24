@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { BucketList } from "../modules/list-by-user/components/list";
-import { useUserList } from "../modules/list-by-user/hooks/use-dream-list";
-import { Users } from "../modules/list-by-user/types/list.types";
+import { BucketList } from "../modules/dream-list/components/dream-list";
+import {useUserList} from '../modules/users/hooks/use-user-list'
+import { Users } from "../modules/dream-list/types/dream-list.types";
 
 const Home: NextPage = () => {
   const { data: userData, isLoading } = useUserList();
@@ -21,8 +21,10 @@ const Home: NextPage = () => {
     return <>...Loading</>;
   }
 
-  return <BucketList users={userData as Users[]} items={items} />;
+  return <BucketList users={userData as Users[]}  />
+
 };
 
-
 export default Home;
+
+

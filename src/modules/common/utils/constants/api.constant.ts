@@ -6,4 +6,7 @@ export const BASE_URL = `${publicRuntimeConfig.hostUrl}/api`;
 
 export const API_CONSTANT = {
   USERS: "/users",
+  DREAM_LIST: "/dream/list",
+  DREAM: "/dream",
+  UPDATE:'/dream/update'
 };
