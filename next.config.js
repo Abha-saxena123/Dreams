@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+  publicRuntimeConfig: {
+    mongoURI: process.env.MONGODB_URI,
+    mongoDB: process.env.MONGODB_DB,
+    hostUrl: process.env.HOST_URL,
+  },
+};

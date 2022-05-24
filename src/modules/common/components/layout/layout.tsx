@@ -1,6 +1,11 @@
 import React, { ReactNode, useEffect } from "react";
 import { Footer } from "./footer/footer";
-import { AppLayout, AppContent } from "./layout.styles";
+import {
+  AppLayout,
+  AppContent,
+  AppWrapper,
+  AppSideImage,
+} from "./layout.styles";
 import { Header } from "./header/header";
 import { useRouter } from "next/router";
 
@@ -14,12 +19,16 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
         left: 0,
       });
     });
-  }, []);
+  }, [router.events]);
 
   return (
     <AppLayout>
       <Header />
-      <AppContent>{children}</AppContent>
+      <AppContent>
+        <AppSideImage />
+        <AppWrapper> {children}</AppWrapper>
+        <AppSideImage />
+      </AppContent>
       <Footer />
     </AppLayout>
   );
