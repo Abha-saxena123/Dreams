@@ -4,7 +4,16 @@ export interface TabPanelProps {
   value: number;
 }
 
+
+
+export interface Users {
+  firstName: string;
+  lastName: string;
+  id: number;
+  // dreams: string[];
+}
+
 export interface BucketListProps {
-  users: string[];
+  users: Users[];
   items: { id: number; value: string }[][];
 }

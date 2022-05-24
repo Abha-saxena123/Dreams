@@ -14,7 +14,13 @@ export const AppLayout = styled.div`
 //   max-width: ${THEME_DEFAULTS.BREAKPOINTS.xxl}px;
 //   margin: 0 auto;
 // }
+
+export const AppWrapper = styled.div`
+  flex-grow: 1;
+`;
+
 export const AppContent = styled.main`
+  display: flex;
   flex: 1;
   background-color: floralwhite;
 `;
@@ -23,3 +29,12 @@ export const AppContent = styled.main`
 //   margin-left: ${spacing(5)};
 //   margin-top: ${spacing(10)};
 // }
+
+export const AppSideImage = styled.div`
+  width: 200px;
+  height: 100vh;
+  border-right: 2px solid darkcyan;
+  border-left: 2px solid darkcyan;
+  background-image: url(list-side-image.jpg);
+  background-size: contain;
+`;

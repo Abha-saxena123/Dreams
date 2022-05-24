@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import { BucketList } from "../modules/list-by-user/components/list";
+import { useUserList } from "../modules/list-by-user/hooks/use-dream-list";
+import { Users } from "../modules/list-by-user/types/list.types";
 
 const Home: NextPage = () => {
-  const users = ["Abha", "Deepti"];
+  const { data: userData, isLoading } = useUserList();
+
   const items = [
     [
       { id: 1, value: "NY" },
@@ -14,7 +17,12 @@ const Home: NextPage = () => {
     ],
   ];
 
-  return <BucketList users={users} items={items} />;
+  if (isLoading) {
+    return <>...Loading</>;
+  }
+
+  return <BucketList users={userData as Users[]} items={items} />;
 };
+
 
 export default Home;
