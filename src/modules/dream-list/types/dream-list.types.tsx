@@ -1,19 +1,22 @@
+import { ObjectId } from "mongodb";
+
 export interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
 }
 
-
-
 export interface Users {
   firstName: string;
   lastName: string;
-  id: number;
-  // dreams: string[];
+  _id: ObjectId;
 }
 
 export interface BucketListProps {
-  users: Users[];
-  items: { id: number; value: string }[][];
+  _id: ObjectId;
+  description: string;
+  experience: string;
+  firstName: string;
+  remarks: string;
+  title: string;
 }

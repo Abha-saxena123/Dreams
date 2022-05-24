@@ -1,4 +1,4 @@
-export interface DreamDetailsPageProps {
+export interface DreamDetailsProps {
   id: string;
   title: string;
   description: string;

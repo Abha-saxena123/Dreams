@@ -39,8 +39,6 @@ export async function connectToDatabase() {
   await client.connect();
   let db = client.db(MONGODB_DB);
 
-  console.log("@@@@@@@");
-
   // set cache
   cachedClient = client;
   cachedDb = db;

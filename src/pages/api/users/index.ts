@@ -9,8 +9,8 @@ export default async function handler(
   let { db } = await connectToDatabase();
 
   if (method === "GET") {
-    const dreamList = await db.collection("users").find().toArray();
-    res.status(200).json({ data: dreamList });
+    const userList = await db.collection("users").find().toArray();
+    res.status(200).json({ data: userList });
   }
 
   if (method === "POST") {
@@ -23,7 +23,7 @@ export default async function handler(
   }
 
   // if (method === "PUT") {
-  //   const dreamList = await db.collection("users").find().toArray();
-  //   res.status(200).json({ data: dreamList });
+  //   const userList = await db.collection("users").find().toArray();
+  //   res.status(200).json({ data: userList });
   // }
 }

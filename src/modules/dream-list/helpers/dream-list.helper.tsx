@@ -1,6 +1,6 @@
 import { Typography } from "../../common/components/typography/typography";
 import { FontType } from "../../common/utils/constants/typography.constants";
-import { TabPanelProps } from "../types/list.types";
+import { TabPanelProps } from "../types/dream-list.types";
 
 export function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;

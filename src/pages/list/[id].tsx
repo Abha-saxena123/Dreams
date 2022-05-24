@@ -1,11 +1,16 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { DreamDetails } from "../../modules/details-page/components/dream-details";
 
 const DreamDetailsPage: NextPage = () => {
+  const {
+    query: { id },
+  } = useRouter();
+
   return (
     <Wrapper>
-      <DreamDetails />
+      <DreamDetails id={id as string}/>
     </Wrapper>
   );
 };
