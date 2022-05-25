@@ -1,11 +1,12 @@
 import { ObjectId } from "mongodb";
 import { useForm } from "react-hook-form";
-import {
-  FormSubmitButton,
-  UpdateFormWrapper,
-} from "../../add-dream/components/add-dream.styles";
 import { useUpdateDream } from "../hooks/use-dream-update";
-import { UpdateForm, StyledExperienceInput } from "./dream-list.styles";
+import {
+  UpdateFormWrapper,
+  UpdateForm,
+  StyledExperienceInput,
+  FormSubmitButton,
+} from "./dream-list.styles";
 
 interface MarkItDoneFormProps {
   id: ObjectId;
@@ -32,7 +33,6 @@ export const MarkItDoneFrom: React.FC<MarkItDoneFormProps> = ({
   };
 
   const onSuccess = () => {
-    reset();
     refetch();
   };
 
