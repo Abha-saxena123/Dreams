@@ -9,7 +9,7 @@ export interface TabPanelProps {
 export interface Users {
   firstName: string;
   lastName: string;
-  _id: ObjectId;
+  _id: string;
 }
 
 export interface BucketListProps {
@@ -19,4 +19,5 @@ export interface BucketListProps {
   firstName: string;
   remarks: string;
   title: string;
+  isDone: boolean;
 }

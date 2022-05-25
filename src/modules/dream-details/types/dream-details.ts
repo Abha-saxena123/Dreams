@@ -4,4 +4,5 @@ export interface DreamDetailsProps {
   description: string;
   remarks?: string;
   experience?: string;
+   isDone?: string;
 }
