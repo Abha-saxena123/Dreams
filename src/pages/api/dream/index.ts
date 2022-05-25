@@ -32,8 +32,15 @@ export default async function handler(
     res.status(200).send({ message: "Dream added successfully" });
   }
 
-  // if (method === "PUT") {
-  //   const dreamList = await db.collection("users").find().toArray();
-  //   res.status(200).json({ data: dreamList });
-  // }
+  if (method === "PUT") {
+    const { _id, isDone } = req.body;
+    console.log(" _id, isDone", _id, isDone, typeof isDone);
+    const dreamList = await db
+      .collection("dreamItems")
+      .updateOne(
+        { _id: new ObjectId(_id as string) },
+        { $set: { isDone: isDone } }
+      );
+    res.status(200).json({ data: "Dream updated successfully" });
+  }
 }

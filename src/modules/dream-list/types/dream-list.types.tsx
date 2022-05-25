@@ -21,3 +21,8 @@ export interface BucketListProps {
   title: string;
   isDone: boolean;
 }
+
+export interface DreamUpdateProps {
+  isDone: boolean;
+  _id: ObjectId;
+}
