@@ -1,10 +1,15 @@
-import { TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { AddCircleOutlineOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 
 interface ListTrophyProps {
   isDone: boolean;
 }
+
+export const FormSubmitButton = styled(Button)`
+  background-color: darkcyan !important;
+  margin 10px !important;
+`;
 
 export const ListValueWrapper = styled.div`
   display: flex;
