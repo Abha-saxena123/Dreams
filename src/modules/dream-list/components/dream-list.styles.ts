@@ -1,7 +1,11 @@
 import { AddCircleOutlineOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 
-export const ListValueButton = styled.div`
+interface ListTrophyProps {
+  isDone: boolean;
+}
+
+export const ListValueWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,4 +39,13 @@ export const ListTab = styled.div`
 
 export const ListTabContainer = styled.div`
   flex-grow: 1;
+`;
+
+export const ListItemWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+export const ListTrophy = styled.div<ListTrophyProps>`
+  opacity: ${({ isDone }) => (isDone ? 1 : 0.5)};
 `;

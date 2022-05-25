@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { DreamDetails } from "../../modules/details-page/components/dream-details";
+import { DreamDetails } from "../../modules/dream-details/components/dream-details";
 
 const DreamDetailsPage: NextPage = () => {
   const {
@@ -18,6 +18,6 @@ const DreamDetailsPage: NextPage = () => {
 export default DreamDetailsPage;
 
 const Wrapper = styled.div`
-  background-image: url(default-details-image.jpg);
+  background-image: url(/default-details-image.jpg);
   background-size: cover;
 `;

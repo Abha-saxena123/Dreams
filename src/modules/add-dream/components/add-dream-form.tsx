@@ -1,25 +1,25 @@
 import { useForm } from "react-hook-form";
-import { DreamDetailsProps } from "../../details-page/types/dream-details";
-import { useAddDream } from "../hooks/use-add-items";
+import { DreamDetailsProps } from "../../dream-details/types/dream-details";
+import { useAddDream } from "../hooks/use-add-dream";
 import {
   AddDreamServieProps,
   FormDataInterface,
-} from "../types/update-form.types";
+} from "../types/add-dream.types";
 import {
   UpdateFormWrapper,
   StyledInput,
   FormSubmitButton,
-} from "./update.styles";
+} from "./add-dream.styles";
 
 export const UpdateItemFrom: React.FC = () => {
   const { register, handleSubmit } = useForm();
-
 
   const { mutate: updateItems, isError: isError, error, reset } = useAddDream();
 
   const onSubmit = async (payload: AddDreamServieProps): Promise<void> => {
     reset();
-    updateItems(payload, { onSuccess });
+    const finalPayload = { ...payload, isDone: false };
+    updateItems(finalPayload, { onSuccess });
   };
 
   const onSuccess = () => {

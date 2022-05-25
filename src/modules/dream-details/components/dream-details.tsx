@@ -33,7 +33,7 @@ export const DreamDetails: React.FC<{ id: string }> = ({ id }) => {
           {dreamDetail.remarks}
         </InfoTile>
       )}
-      {!!dreamDetail.experience && (
+      {dreamDetail.isDone && (
         <InfoTile label={"Experience"} fontSizeChildren={16}>
           {dreamDetail.experience}
         </InfoTile>

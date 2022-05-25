@@ -35,6 +35,6 @@ export const AppSideImage = styled.div`
   height: 100vh;
   border-right: 2px solid darkcyan;
   border-left: 2px solid darkcyan;
-  background-image: url(list-side-image.jpg);
+  background-image: url(/list-side-image.jpg);
   background-size: contain;
 `;

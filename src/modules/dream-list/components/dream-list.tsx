@@ -4,7 +4,7 @@ import { a11yProps, TabPanel } from "../helpers/dream-list.helper";
 import { ListTabContainer, ListTab } from "./dream-list.styles";
 import { Typography } from "../../common/components/typography/typography";
 import { FontType } from "../../common/utils/constants/typography.constants";
-import { DreamListItems } from "./list-items";
+import { DreamListItems } from "./";
 import { Users } from "../types/dream-list.types";
 
 interface BucketListPageProps {

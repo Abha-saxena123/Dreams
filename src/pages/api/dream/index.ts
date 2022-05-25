@@ -23,7 +23,10 @@ export default async function handler(
   if (method === "POST") {
     const newItem = req.body;
     db.collection("dreamItems").insertOne(newItem, function (err, res) {
-      if (err) throw err;
+      if (err) {
+        console.log("ERROR", err);
+        throw err;
+      }
       console.log("1 Item inserted");
     });
     res.status(200).send({ message: "Dream added successfully" });
