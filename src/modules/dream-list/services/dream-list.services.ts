@@ -1,5 +1,9 @@
 import getConfig from "next/config";
-import { BucketListProps, Users } from "../../dream-list/types/dream-list.types";
+import {
+  BucketListProps,
+  DreamUpdateProps,
+  Users,
+} from "../../dream-list/types/dream-list.types";
 import axios from "axios";
 import {
   API_CONSTANT,
@@ -17,9 +21,9 @@ export class DreamListServices {
       .then((res) => res.data.data);
   }
 
-  static async addUser(): Promise<Users[]> {
+  static async updateDream(payload: DreamUpdateProps): Promise<void> {
     return await axios
-      .post(`${BASE_URL}${API_CONSTANT.USERS}`)
+      .put(`${BASE_URL}${API_CONSTANT.DREAM}`, payload)
       .then((res) => res.data.data);
   }
 }

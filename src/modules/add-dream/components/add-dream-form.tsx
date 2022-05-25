@@ -14,12 +14,12 @@ import {
 export const UpdateItemFrom: React.FC = () => {
   const { register, handleSubmit } = useForm();
 
-  const { mutate: updateItems, isError: isError, error, reset } = useAddDream();
+  const { mutate: addDream, isError: isError, error, reset } = useAddDream();
 
   const onSubmit = async (payload: AddDreamServieProps): Promise<void> => {
     reset();
     const finalPayload = { ...payload, isDone: false };
-    updateItems(finalPayload, { onSuccess });
+    addDream(finalPayload, { onSuccess });
   };
 
   const onSuccess = () => {

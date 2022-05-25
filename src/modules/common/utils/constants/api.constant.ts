@@ -10,3 +10,23 @@ export const API_CONSTANT = {
   DREAM: "/dream",
   UPDATE:'/dream/update'
 };
+
+export const QUERY_CLIENT_CONFIG = {
+  defaultOptions: {
+    queries: {
+      retry: false,
+      staleTime: 0,
+      cacheTime: 1000 * 60 * 5,
+      refetchOnMount: true,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: true,
+      refetchInterval: 1000 * 60 * 5,
+      refetchIntervalInBackground: false,
+      suspense: false,
+      keepPreviousData: false,
+    },
+    mutations: {
+      retry: false,
+    },
+  },
+};
