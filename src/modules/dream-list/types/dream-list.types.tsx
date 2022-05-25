@@ -25,4 +25,5 @@ export interface BucketListProps {
 export interface DreamUpdateProps {
   isDone: boolean;
   _id: ObjectId;
+  experience: string;
 }

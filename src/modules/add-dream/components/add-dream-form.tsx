@@ -12,18 +12,21 @@ import {
 } from "./add-dream.styles";
 
 export const UpdateItemFrom: React.FC = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
-  const { mutate: addDream, isError: isError, error, reset } = useAddDream();
+  const { mutate: addDream, isError: isError, error } = useAddDream();
 
   const onSubmit = async (payload: AddDreamServieProps): Promise<void> => {
     reset();
+
     const finalPayload = { ...payload, isDone: false };
     addDream(finalPayload, { onSuccess });
   };
 
   const onSuccess = () => {
     // refetch();
+    
+    // reset();
   };
 
   return (

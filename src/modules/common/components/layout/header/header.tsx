@@ -13,8 +13,8 @@ import { Typography } from "@material-ui/core";
 export const Header: React.FC = () => {
   const router = useRouter();
 
-  const links = ["/", "/update-list"];
-  const linkValue = ["List", "Add Items"];
+  const links = ["/", "/add-dream"];
+  const linkValue = ["List", "Add Dreams"];
 
   return (
     <HeaderContainer>

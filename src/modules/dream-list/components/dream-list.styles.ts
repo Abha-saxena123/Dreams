@@ -1,3 +1,4 @@
+import { TextField } from "@material-ui/core";
 import { AddCircleOutlineOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 
@@ -48,4 +49,39 @@ export const ListItemWrapper = styled.div`
 
 export const ListTrophy = styled.div<ListTrophyProps>`
   opacity: ${({ isDone }) => (isDone ? 1 : 0.5)};
+`;
+
+export const StyledExperienceInput = styled(TextField)`
+  margin: 15px !important;
+  > div {
+    min-height: 100px !important;
+  }
+`;
+
+export const UpdateForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 35%;
+  top: 25%;
+  align-items: space-between;
+  justify-content: space-between;
+  min-height: 200px;
+  background-color: white;
+  min-height: 200px;
+  min-width: 400px;
+`;
+
+export const UpdateFormWrapper = styled.div`
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 `;

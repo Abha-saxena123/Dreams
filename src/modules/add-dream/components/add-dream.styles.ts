@@ -8,7 +8,7 @@ export const UpdateFormWrapper = styled.form`
 `;
 
 export const StyledInput = styled(TextField)`
-  margin 10px !important;
+  margin: 10px !important;
 `;
 
 export const FormSubmitButton = styled(Button)`

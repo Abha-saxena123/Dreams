@@ -13,35 +13,24 @@ import {
 import { Typography } from "../../common/components/typography/typography";
 import { FontType } from "../../common/utils/constants/typography.constants";
 import { useDreamList } from "../hooks/use-dream-list";
-import { RoundedCornerRounded } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
-import { ObjectId } from "mongodb";
-import { useUpdateDream } from "../hooks/use-dream-update";
+import { MarkItDoneFrom } from "./add-experience-form";
 
 export const DreamListItems: React.FC<{
   user: Users[];
   value: number;
 }> = ({ user, value }) => {
   const { data, isLoading, refetch } = useDreamList(user[value].firstName);
-  const {
-    mutate: updateDream,
-    isError: isError,
-    error,
-    reset,
-  } = useUpdateDream();
 
   if (isLoading) {
     return <>Loading...</>;
   }
 
-  const handleClick = (_id: ObjectId, isDone: boolean) => {
-    console.log("isdone", isDone);
-    updateDream({ _id, isDone: !isDone }, { onSuccess });
+  const openForm = () => {
+    (document.getElementById("markDonePopup") as HTMLElement).style.display =
+      "block";
   };
 
-  const onSuccess = () => {
-    refetch();
-  };
   const items = data as BucketListProps[];
 
   return (
@@ -54,13 +43,14 @@ export const DreamListItems: React.FC<{
                 <Typography fontType={FontType.COPY_LARGE_BOLD}>
                   <Link href={`/list/${dream._id}`}>{dream.title}</Link>
                 </Typography>
-                <Button
-                  onClick={() => {
-                    handleClick(dream._id, dream.isDone);
-                  }}
-                >
+                <Button onClick={openForm}>
                   <ListTrophy isDone={dream.isDone}>🏆</ListTrophy>
                 </Button>
+                <MarkItDoneFrom
+                  id={dream._id}
+                  isDone={dream.isDone}
+                  refetch={refetch}
+                />
               </ListItemWrapper>
               {idx === items.length - 1 && (
                 <Link href="/add-dream">

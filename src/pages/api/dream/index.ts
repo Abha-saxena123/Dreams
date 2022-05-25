@@ -33,13 +33,12 @@ export default async function handler(
   }
 
   if (method === "PUT") {
-    const { _id, isDone } = req.body;
-    console.log(" _id, isDone", _id, isDone, typeof isDone);
+    const { _id, isDone, experience } = req.body;
     const dreamList = await db
       .collection("dreamItems")
       .updateOne(
         { _id: new ObjectId(_id as string) },
-        { $set: { isDone: isDone } }
+        { $set: { isDone: isDone, experience: experience } }
       );
     res.status(200).json({ data: "Dream updated successfully" });
   }
