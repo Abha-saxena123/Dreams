@@ -6,16 +6,28 @@ import { Typography } from "../../common/components/typography/typography";
 import { FontType } from "../../common/utils/constants/typography.constants";
 import { DreamListItems } from "./dream-list-items";
 import { Users } from "../types/dream-list.types";
+import { AuthenicateUser } from "./authenticate-user";
 
-interface BucketListPageProps {
+interface DreamListPageProps {
   users: Users[];
 }
 
-export const BucketList: React.FC<BucketListPageProps> = ({ users }) => {
+export const DreamList: React.FC<DreamListPageProps> = ({ users }) => {
+  const [value, setValue] = useState(0);
+  const [userDetails, setUserName] = useState({
+    userName: users[0].userName,
+    oldPassword: users[0].password,
+  });
+  const [showList, setShowList] = useState(false);
+
   const handleChange = (event: ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
+    setShowList(false);
+    setUserName({
+      userName: users[newValue].userName,
+      oldPassword: users[newValue].password,
+    });
   };
-  const [value, setValue] = useState(0);
 
   return (
     <ListTabContainer>
@@ -34,7 +46,11 @@ export const BucketList: React.FC<BucketListPageProps> = ({ users }) => {
           ))}
         </Tabs>
       </ListTab>
-      <DreamListItems value={value} user={users} />
+      {showList ? (
+        <DreamListItems value={value} user={users} />
+      ) : (
+        <AuthenicateUser {...userDetails} setShowList={setShowList} />
+      )}
     </ListTabContainer>
   );
 };

@@ -7,9 +7,7 @@ import { DreamDetailsProps } from "../../dream-details/types/dream-details";
 import { AddDreamServieProps } from "../types/add-dream.types";
 
 export class AddDreamServices {
-  static async addDreamDetails({
-    payload,
-  }: AddDreamServieProps): Promise<void> {
+  static async addDreamDetails(payload: AddDreamServieProps): Promise<void> {
     return await axios.post(`${BASE_URL}${API_CONSTANT.DREAM}`, payload);
   }
 }

@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
-import {  AddDream } from "../modules/add-dream/components/add-dream";
+import { AddDreamFrom } from "../modules/add-dream/components/add-dream-form";
 
 const AddDreamPage: NextPage = () => {
-  return <AddDream />;
+  return <AddDreamFrom />;
 };
 
 export default AddDreamPage;

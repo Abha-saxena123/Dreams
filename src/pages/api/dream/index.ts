@@ -18,9 +18,7 @@ export default async function handler(
       .find({ _id: new ObjectId(id as string) })
       .toArray();
     res.status(200).json({ data: dreamDetails[0] });
-  }
-
-  if (method === "POST") {
+  } else if (method === "POST") {
     const newItem = req.body;
     db.collection("dreamItems").insertOne(newItem, function (err, res) {
       if (err) {
@@ -30,9 +28,7 @@ export default async function handler(
       console.log("1 Item inserted");
     });
     res.status(200).send({ message: "Dream added successfully" });
-  }
-
-  if (method === "PUT") {
+  } else if (method === "PUT") {
     const { _id, isDone, experience } = req.body;
     const dreamList = await db
       .collection("dreamItems")

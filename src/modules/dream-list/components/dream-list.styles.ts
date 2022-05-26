@@ -1,4 +1,4 @@
-import { Button, TextField } from "@material-ui/core";
+import { Button, InputLabel, TextField } from "@material-ui/core";
 import { AddCircleOutlineOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 
@@ -26,6 +26,10 @@ export const ListValueWrapper = styled.div`
 
 export const AddItemLink = styled(AddCircleOutlineOutlined)`
   padding-right: 10px;
+`;
+
+export const StyledInputLabel = styled(InputLabel)`
+  padding: 10px !important;
 `;
 
 export const AddLinkWrapper = styled.div`

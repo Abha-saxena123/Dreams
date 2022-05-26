@@ -9,6 +9,8 @@ export interface TabPanelProps {
 export interface Users {
   firstName: string;
   lastName: string;
+  userName: string;
+  password: string;
   _id: string;
 }
 
