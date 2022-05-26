@@ -25,32 +25,34 @@ export const UpdateItemFrom: React.FC = () => {
 
   const onSuccess = () => {
     // refetch();
-    
     // reset();
   };
 
   return (
     <UpdateFormWrapper onSubmit={handleSubmit(onSubmit)}>
       <StyledInput
+        required
         id="outlined-basic"
         label="FirstName"
         variant="outlined"
         {...register("firstName")}
       />
       <StyledInput
+        required
         id="outlined-basic"
         label="Title"
         variant="outlined"
         {...register("title")}
       />
       <StyledInput
+        required
         id="outlined-basic"
         label="Description"
         variant="outlined"
         {...register("description")}
       />
       <StyledInput
-        id="outlined-basic"
+        id="remarks"
         label="Remarks"
         variant="outlined"
         {...register("remarks")}

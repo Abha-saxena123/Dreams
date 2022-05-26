@@ -1,9 +1,6 @@
-import Link from "next/link";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { Typography } from "../../typography/typography";
 
-/**
- * -------------------General header styling-------------------
- */
 export const HeaderContainer = styled.div`
   border-bottom: 1px solid lightgray;
   display: flex;
@@ -12,7 +9,6 @@ export const HeaderContainer = styled.div`
   min-height: 100px;
   background-color: darkcyan;
 `;
-
 
 export const HeaderLogoContainer = styled.div`
   margin: 0 30px;
@@ -34,7 +30,19 @@ export const HeaderLinkContainer = styled.div`
   margin-left: 50px;
   margin-right: 50px;
   justify-content: space-between;
-  width: 300px;
+  // width: 300px;
+  .h4 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 `;
 
-export const HeaderLink = styled(Link)``;
+export const HeaderLinkText = styled(Typography)`
+  margin-left: 50px !important;
+  margin-right: 50px;
+
+  a:-webkit-any-link {
+    color: black;
+    text-decoration: none;
+  }
+`;
