@@ -13,9 +13,9 @@ export class UserListServices {
       .then((res) => res.data.data);
   }
 
-  static async addUser(): Promise<Users[]> {
+  static async addUser(payload: Users): Promise<void> {
     return await axios
-      .post(`${BASE_URL}${API_CONSTANT.USERS}`)
+      .post(`${BASE_URL}${API_CONSTANT.USERS}`, payload)
       .then((res) => res.data.data);
   }
 }

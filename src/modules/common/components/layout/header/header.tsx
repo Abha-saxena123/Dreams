@@ -1,28 +1,24 @@
-import React, { useState, ChangeEvent } from "react";
-
+import React from "react";
 import {
   HeaderContainer,
-  HeaderLogoContainer,
-  HeaderLink,
-  HeaderLinkContainer
+  HeaderLinkContainer,
+  HeaderLinkText,
 } from "./header.styles";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { Typography } from "@material-ui/core";
+import { FontType } from "../../../utils/constants/typography.constants";
+import Link from "next/link";
 
 export const Header: React.FC = () => {
-  const router = useRouter();
-
-  const links = ["/", "/add-dream"];
-  const linkValue = ["List", "Add Dreams"];
+  const links = ["/", "/add-dream", "add-user"];
+  const linkValue = ["List", "Add Dreams", "Add User"];
 
   return (
     <HeaderContainer>
       <HeaderLinkContainer>
         {links.map((link, idx) => (
-          <HeaderLink href={link} key={link}>
-            <Typography variant="h4">{linkValue[idx]}</Typography>
-          </HeaderLink>
+          <HeaderLinkText fontType={FontType.HEADLINE1} key={idx}>
+            <Link href={link}>{linkValue[idx]}</Link>
+          </HeaderLinkText>
         ))}
       </HeaderLinkContainer>
     </HeaderContainer>
