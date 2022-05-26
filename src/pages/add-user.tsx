@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { AddUser } from "../modules/users/components/add-user";
+import { AddUserFrom } from "../modules/users/components/add-user-form";
 
 const AddDreamPage: NextPage = () => {
-  return <AddUser />;
+  return <AddUserFrom />;
 };
 
 export default AddDreamPage;

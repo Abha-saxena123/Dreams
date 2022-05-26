@@ -7,16 +7,15 @@ import {
 import { VisibilityOff, Visibility } from "@material-ui/icons";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Users } from "../../dream-list/types/dream-list.types";
+import { Form } from "../../common/components/form/form";
+import { StyledInput } from "../../common/components/form/form.styles";
+import { Users } from "../types/users.types";
 import { useAddUser } from "../hooks/use-add-user";
-import {
-  AddUserFormWrapper,
-  AddUserStyledInput,
-  AddUserFormSubmitButton,
-  AddUserPassword
-} from "./add-user.styles";
+import { AddUserPassword } from "./add-user.styles";
+import { useRouter } from "next/router";
 
 export const AddUserFrom: React.FC = () => {
+  const router = useRouter();
   const { register, handleSubmit, reset } = useForm();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -27,9 +26,10 @@ export const AddUserFrom: React.FC = () => {
   };
 
   const onSuccess = () => {
-    // refetch();
     reset();
+    router.push("/");
   };
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -41,20 +41,28 @@ export const AddUserFrom: React.FC = () => {
   };
 
   return (
-    <AddUserFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <AddUserStyledInput
+    <Form onSubmit={handleSubmit(onSubmit)} submitBtnTxt={"Add User"}>
+      <StyledInput
         required
         id="firstName"
         label="FirstName"
         variant="outlined"
         {...register("firstName")}
       />
-      <AddUserStyledInput
+      <StyledInput
         required
         id="lastName"
         label="LastName"
         variant="outlined"
         {...register("lastName")}
+      />
+      <StyledInput
+        required
+        id="userName"
+        label="UserName"
+        variant="outlined"
+        placeholder="Enter Unique User Name"
+        {...register("userName")}
       />
       <AddUserPassword variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
@@ -78,7 +86,6 @@ export const AddUserFrom: React.FC = () => {
           {...register("password")}
         />
       </AddUserPassword>
-      <AddUserFormSubmitButton type="submit">Add</AddUserFormSubmitButton>
-    </AddUserFormWrapper>
+    </Form>
   );
 };
