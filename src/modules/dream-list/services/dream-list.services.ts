@@ -13,7 +13,7 @@ import {
 export class DreamListServices {
   static async getDreamList(user: string): Promise<BucketListProps[]> {
     return await axios
-      .get(`${BASE_URL}${API_CONSTANT.DREAM_LIST}`, {
+      .get(`${API_CONSTANT.DREAM_LIST}`, {
         params: {
           user: user,
         },
@@ -23,7 +23,7 @@ export class DreamListServices {
 
   static async updateDream(payload: DreamUpdateProps): Promise<void> {
     return await axios
-      .put(`${BASE_URL}${API_CONSTANT.DREAM}`, payload)
+      .put(`${API_CONSTANT.DREAM}`, payload)
       .then((res) => res.data.data);
   }
 }

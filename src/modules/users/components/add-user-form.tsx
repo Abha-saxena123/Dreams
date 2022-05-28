@@ -13,6 +13,7 @@ import { Users } from "../types/users.types";
 import { useAddUser } from "../hooks/use-add-user";
 import { AddUserPassword } from "./add-user.styles";
 import { useRouter } from "next/router";
+import Error from "../../common/components/error/errors";
 
 export const AddUserFrom: React.FC = () => {
   const router = useRouter();
@@ -20,6 +21,10 @@ export const AddUserFrom: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { mutate: addUser, isError: isError, error } = useAddUser();
+
+  if (isError) {
+    return <Error errorMessage={error.message} />;
+  }
 
   const onSubmit = async (payload: Users): Promise<void> => {
     addUser(payload, { onSuccess });

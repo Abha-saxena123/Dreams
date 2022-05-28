@@ -15,15 +15,20 @@ import { FontType } from "../../common/utils/constants/typography.constants";
 import { useDreamList } from "../hooks/use-dream-list";
 import { Button } from "@material-ui/core";
 import { MarkItDoneFrom } from "./add-experience-form";
+import Error from "../../common/components/error/errors";
 
 export const DreamListItems: React.FC<{
   user: Users[];
   value: number;
 }> = ({ user, value }) => {
-  const { data, isLoading, refetch } = useDreamList(user[value].firstName);
+  const { data, isLoading, refetch, isError, error } = useDreamList(user[value].firstName);
 
   if (isLoading) {
     return <>Loading...</>;
+  }
+
+  if (isError) {
+    return <Error errorMessage={error.message} />;
   }
 
   const openForm = () => {
