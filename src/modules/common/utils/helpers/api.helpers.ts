@@ -29,7 +29,6 @@ export function handleError({ data, message, status }: { data?: any; message?: s
   let messageData = '';
 
   if (status && status === 401) {
-    // handleLogout();
 
     return messageData;
   }

@@ -6,6 +6,8 @@ enum ErrorReferenceConstants {
   DNS_PROBE_FINISHED_NO_INTERNET = 'DNS_PROBE_FINISHED_NO_INTERNET',
 }
 
+// done in this way bcz in future multi language feature will be supported
+
 enum ErrorMessageConstants {
   OOPS_SOMETHING_WENT_WRONG = 'errors.somethingWentWrong',
   COULD_NOT_LOAD_DETAILS = 'errors.couldNotLoad',
