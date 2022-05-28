@@ -1,8 +1,8 @@
+import Error from "../../common/components/error/errors";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { Form } from "../../common/components/form/form";
 import { StyledInput } from "../../common/components/form/form.styles";
-import { DreamDetailsProps } from "../../dream-details/types/dream-details";
 import { useAddDream } from "../hooks/use-add-dream";
 import { AddDreamServieProps } from "../types/add-dream.types";
 
@@ -11,6 +11,10 @@ export const AddDreamFrom: React.FC = () => {
   const router = useRouter();
 
   const { mutate: addDream, isError: isError, error } = useAddDream();
+
+  if (isError) {
+    return <Error errorMessage={error.message} />;
+  }
 
   const onSubmit = async (payload: AddDreamServieProps): Promise<void> => {
     const finalPayload = { ...payload, isDone: false };

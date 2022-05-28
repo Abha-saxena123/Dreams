@@ -5,5 +5,6 @@ module.exports = {
     mongoURI: process.env.MONGODB_URI,
     mongoDB: process.env.MONGODB_DB,
     hostUrl: process.env.HOST_URL,
+    apiUrl: process.env.API_URL,
   },
 };

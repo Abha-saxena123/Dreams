@@ -1,3 +1,4 @@
+import Error from "../../common/components/error/errors";
 import { ObjectId } from "mongodb";
 import { useForm } from "react-hook-form";
 import { useUpdateDream } from "../hooks/use-dream-update";
@@ -21,7 +22,11 @@ export const MarkItDoneFrom: React.FC<MarkItDoneFormProps> = ({
 }) => {
   const { register, handleSubmit, reset } = useForm();
 
-  const { mutate: updateDream, error } = useUpdateDream();
+  const { mutate: updateDream, error, isError } = useUpdateDream();
+
+  if (isError) {
+    return <Error errorMessage={error.message} />;
+  }
 
   const onSubmit = async (payload: any): Promise<void> => {
     reset();
