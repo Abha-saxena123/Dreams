@@ -8,7 +8,8 @@ export const API_CONSTANT = {
   USERS: "/users",
   DREAM_LIST: "/dream/list",
   DREAM: "/dream",
-  UPDATE:'/dream/update'
+  UPDATE:'/dream/update',
+  LOGIN:'/login'
 };
 
 export const QUERY_CLIENT_CONFIG = {
