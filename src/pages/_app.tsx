@@ -3,17 +3,31 @@ import { Layout } from "../modules/common/components/layout/layout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
-import { useMemo } from "react";
+import { ReactElement, ReactNode, useMemo } from "react";
 import { QUERY_CLIENT_CONFIG } from "../modules/common/utils/constants/api.constant";
 import "../modules/common/utils/helpers/api.helpers";
+import { NextPage } from "next";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const getDefaultLayout = (page: ReactElement): ReactNode => (
+  <Layout>{page}</Layout>
+);
+
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+interface CustomAppProps {
+  Component?: NextPageWithLayout;
+}
+
+function MyApp({ Component, pageProps }: AppProps & CustomAppProps) {
+  const getLayout = Component.getLayout || getDefaultLayout;
+
   const queryClient = useMemo(() => new QueryClient(QUERY_CLIENT_CONFIG), []);
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout(<Component {...pageProps} />)}
+
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

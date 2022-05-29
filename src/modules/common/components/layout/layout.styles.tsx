@@ -38,3 +38,14 @@ export const AppSideImage = styled.div`
   background-image: url(/list-side-image.jpg);
   background-size: contain;
 `;
+
+export const AuthContent = styled.main`
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 50px auto 0 auto;
+  padding-left: 44px;
+  padding-right: 44px;
+`;
