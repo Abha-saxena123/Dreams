@@ -5,12 +5,19 @@ import {
   HeaderLinkText,
 } from "./header.styles";
 import { useRouter } from "next/router";
-import { FontType } from "../../../utils/constants/typography.constants";
+import {
+  FontType,
+  TypographyFontStyles,
+} from "../../../utils/constants/typography.constants";
 import Link from "next/link";
+import { Button } from "@material-ui/core";
+import { handleLogout } from "../../../../auth/utils/helpers/auth.helpers";
+import styled from "styled-components";
+import { Typography } from "../../typography/typography";
 
 export const Header: React.FC = () => {
-  const links = ["/", "/add-dream", "add-user"];
-  const linkValue = ["List", "Add Dreams", "Add User"];
+  const links = ["/", "/add-dream"];
+  const linkValue = ["List", "Add Dreams"];
 
   return (
     <HeaderContainer>
@@ -21,6 +28,14 @@ export const Header: React.FC = () => {
           </HeaderLinkText>
         ))}
       </HeaderLinkContainer>
+      <LogoutButton onClick={handleLogout}>
+        <Typography fontType={FontType.HEADLINE2}>Logout 😧</Typography>{" "}
+      </LogoutButton>
     </HeaderContainer>
   );
 };
+
+const LogoutButton = styled.div`
+  position: absolute;
+  right: 50px;
+`;

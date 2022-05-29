@@ -17,12 +17,12 @@ export const FormSubmitButton = styled(Button)`
   margin 10px !important;
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.div<{ isLogin?: boolean }>`
   display: flex;
   background-color: cream;
   border: 5px solid darkcyan;
   margin: 10px;
-  position: fixed;
+  position: ${({ isLogin }) => (isLogin ? "unset" : "relative")};
   left: 24%;
-  width: 50%;
+  width: ${({ isLogin }) => (isLogin ? 100 : 50)}%;
 `;
