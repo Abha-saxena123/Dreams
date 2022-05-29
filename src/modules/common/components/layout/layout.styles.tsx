@@ -32,7 +32,6 @@ export const AppContent = styled.main`
 
 export const AppSideImage = styled.div`
   width: 200px;
-  height: 100vh;
   border-right: 2px solid darkcyan;
   border-left: 2px solid darkcyan;
   background-image: url(/list-side-image.jpg);

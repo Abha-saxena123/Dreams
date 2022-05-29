@@ -30,7 +30,7 @@ export const HeaderLinkContainer = styled.div`
   margin-left: 50px;
   margin-right: 50px;
   justify-content: space-between;
-  // width: 300px;
+
   .h4 {
     margin-left: 50px;
     margin-right: 50px;

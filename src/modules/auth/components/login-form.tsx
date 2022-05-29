@@ -60,8 +60,6 @@ export const LoginForm: React.FC = () => {
   const handleFormSubmit = async (data: LoginProps) => {
     const { userName, password } = data;
 
-    console.log("user at login page", userName);
-
     setLoginError(null);
     setLoader(true);
 
@@ -88,7 +86,7 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(handleFormSubmit)}>
+    <Form onSubmit={handleSubmit(handleFormSubmit)} isLogin={true}>
       <StyledInput
         required
         id="userName"

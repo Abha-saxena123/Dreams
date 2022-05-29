@@ -1,19 +1,13 @@
 import type { NextPage } from "next";
 import { DreamList } from "../modules/dream-list/components/dream-list";
-import {useUserList} from '../modules/users/hooks/use-user-list'
-import { Users } from "../modules/dream-list/types/dream-list.types";
+import { useSession } from "next-auth/react";
 
 const Home: NextPage = () => {
-  const { data: userData, isLoading } = useUserList();
+  const { data: sessionData } = useSession({ required: true });
 
-  if (isLoading) {
-    return <>...Loading</>;
-  }
+  const firstName = sessionData?.user?.firstName as string;
 
-  return <DreamList users={userData as Users[]}  />
-
+  return <DreamList firstName={firstName} />;
 };
 
 export default Home;
-
-

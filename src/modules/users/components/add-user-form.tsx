@@ -46,7 +46,11 @@ export const AddUserFrom: React.FC = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} submitBtnTxt={"Add User"}>
+    <Form
+      onSubmit={handleSubmit(onSubmit)}
+      submitBtnTxt={"Add User"}
+      isLogin={true}
+    >
       <StyledInput
         required
         id="firstName"

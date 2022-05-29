@@ -38,7 +38,7 @@ export const AddDreamFrom: React.FC = () => {
       <StyledInput
         required
         id="outlined-basic"
-        label="Title"
+        label="Dream Title"
         variant="outlined"
         {...register("title")}
       />
@@ -47,12 +47,14 @@ export const AddDreamFrom: React.FC = () => {
         id="outlined-basic"
         label="Description"
         variant="outlined"
+        multiline
         {...register("description")}
       />
       <StyledInput
         id="remarks"
         label="Remarks"
         variant="outlined"
+        multiline
         {...register("remarks")}
       />
     </Form>
