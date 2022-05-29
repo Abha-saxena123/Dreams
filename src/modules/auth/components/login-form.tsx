@@ -11,13 +11,12 @@ import { Form } from "../../common/components/form/form";
 import { StyledInput } from "../../common/components/form/form.styles";
 import { StyledInputLabel } from "../../dream-list/components/dream-list.styles";
 import { AddUserPassword } from "../../users/components/add-user.styles";
-import React, { useEffect, FormEvent } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 import getConfig from "next/config";
 import { encryptData } from "../../common/utils/helpers/encryption.helpers";
 import { RedirectableProviderType } from "next-auth/providers";
-import NextNProgress from "nextjs-progressbar";
 
 const {
   publicRuntimeConfig: { hostUrl },
