@@ -116,12 +116,6 @@ export const LoginForm: React.FC = () => {
           {...register("password")}
         />
       </AddUserPassword>
-      {showLoader && (
-        <NextNProgress
-          color={"blue"}
-          options={{ easing: "ease-in-out", showSpinner: false }}
-        />
-      )}
     </Form>
   );
 };
