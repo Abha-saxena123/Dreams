@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "../../common/components/form/form";
 import { StyledInput } from "../../common/components/form/form.styles";
 import { useAddDream } from "../hooks/use-add-dream";
-import { AddDreamServiceProps } from "../types/add-dream.types";
+import { AddDreamServieProps } from "../types/add-dream.types";
 
 export const AddDreamFrom: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -16,7 +16,7 @@ export const AddDreamFrom: React.FC = () => {
     return <Error errorMessage={error.message} />;
   }
 
-  const onSubmit = async (payload: AddDreamServiceProps): Promise<void> => {
+  const onSubmit = async (payload: AddDreamServieProps): Promise<void> => {
     const finalPayload = { ...payload, isDone: false };
     addDream(finalPayload, { onSuccess });
   };

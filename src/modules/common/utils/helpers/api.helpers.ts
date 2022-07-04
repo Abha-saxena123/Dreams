@@ -1,14 +1,10 @@
-import axios, { AxiosResponse, AxiosError } from "axios";
-import { BASE_URL } from "../constants/api.constant";
-import {
-  ErrorMessageConstants,
-  ErrorReferenceConstants,
-} from "../constants/error.constants";
+import axios, { AxiosResponse, AxiosError } from 'axios';
+import { BASE_URL } from '../constants/api.constant';
+import { ErrorMessageConstants, ErrorReferenceConstants } from '../constants/error.constants';
 
 (function setAxiosSetup(): void {
   if (axios.defaults.baseURL !== BASE_URL) {
     axios.defaults.baseURL = BASE_URL;
-    console.log(axios.defaults.baseURL);
     axios.interceptors.response.use(
       (response: AxiosResponse) => response,
 
@@ -29,24 +25,17 @@ import {
   }
 })();
 
-export function handleError({
-  data,
-  message,
-  status,
-}: {
-  data?: any;
-  message?: string;
-  status?: number;
-}): string {
-  let messageData = "";
+export function handleError({ data, message, status }: { data?: any; message?: string; status?: number }): string {
+  let messageData = '';
 
   if (status && status === 401) {
+
     return messageData;
   }
 
   if (data && data.message) {
     // To accommodate ace error handler response
-    if (typeof data.message === "string") {
+    if (typeof data.message === 'string') {
       messageData = data.message;
     } else if (data.message.error) {
       messageData = data.message.error;
