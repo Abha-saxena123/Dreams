@@ -7,7 +7,7 @@ export interface FormDataInterface {
    isDone: boolean
 }
 
-export interface AddDreamServieProps {
+export interface AddDreamServiceProps {
   payload: FormDataInterface;
   firstName: string;
 }

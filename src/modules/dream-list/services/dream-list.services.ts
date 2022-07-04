@@ -12,10 +12,11 @@ import {
 
 export class DreamListServices {
   static async getDreamList(user: string): Promise<BucketListProps[]> {
+  
     return await axios
       .get(`${API_CONSTANT.DREAM_LIST}`, {
         params: {
-          user: user,
+          user,
         },
       })
       .then((res) => res.data.data);

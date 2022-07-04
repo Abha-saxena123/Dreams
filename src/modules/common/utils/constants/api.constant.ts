@@ -8,7 +8,6 @@ export const API_CONSTANT = {
   USERS: "/users",
   DREAM_LIST: "/dream/list",
   DREAM: "/dream",
-  UPDATE:'/dream/update',
   LOGIN:'/login'
 };
 

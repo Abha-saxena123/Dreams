@@ -1,7 +1,8 @@
 import { useMutation, UseMutationResult, useQuery, UseQueryResult } from "react-query";
 import { AddDreamServices } from "../services/add-dream.services";
-import { AddDreamServieProps } from "../types/add-dream.types";
+import { AddDreamServiceProps } from "../types/add-dream.types";
 
-export const useAddDream = (): UseMutationResult<void, Error, AddDreamServieProps> => {
+export const useAddDream = (): UseMutationResult<void, Error, AddDreamServiceProps> => {
+  
     return useMutation(AddDreamServices.addDreamDetails);
   };
