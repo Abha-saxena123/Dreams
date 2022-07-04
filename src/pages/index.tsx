@@ -5,9 +5,9 @@ import { useSession } from "next-auth/react";
 const Home: NextPage = () => {
   const { data: sessionData } = useSession({ required: true });
 
-  // const firstName = sessionData?.user?.firstName as string;
+  const firstName = sessionData?.user?.name as string;
 
-  return <DreamList firstName={'Abha'} />;
+  return <DreamList firstName={firstName} />;
 };
 
 export default Home;

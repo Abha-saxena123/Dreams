@@ -78,7 +78,7 @@ export default NextAuth({
       return token;
     },
     async session({ session, token }) {
-      session.user = token.user as Users;
+      (session.user as { name: string }).name = (token.user as Users).firstName;
       session.accessToken = token.accessToken;
       if (dayjs().isAfter(token.accessTokenExpiry as number)) {
         session.expired = true;
