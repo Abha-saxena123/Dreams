@@ -11,7 +11,7 @@ import { Form } from "../../common/components/form/form";
 import { StyledInput } from "../../common/components/form/form.styles";
 import { StyledInputLabel } from "../../dream-list/components/dream-list.styles";
 import { AddUserPassword } from "../../users/components/add-user.styles";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 import getConfig from "next/config";
@@ -63,7 +63,6 @@ export const LoginForm: React.FC = () => {
     setLoader(true);
 
     const encryptedPassword = encryptData(password);
-
     const res = await signIn<RedirectableProviderType>("credentials", {
       redirect: false,
       userName: userName,

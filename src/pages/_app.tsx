@@ -30,8 +30,9 @@ function MyApp({ Component, pageProps, session }: AppProps & CustomAppProps) {
   return (
     <SessionProvider session={session} refetchInterval={60}>
       <QueryClientProvider client={queryClient}>
-        {getLayout(<Component {...pageProps} />)}
-
+        <Hydrate state={pageProps.dehydratedState}>
+          {getLayout(<Component {...pageProps} />)}
+        </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </SessionProvider>
