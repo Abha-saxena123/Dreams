@@ -27,9 +27,9 @@ const providers = [
           password: decryptedPassword,
         });
 
-        if (res.message) {
-          throw Error(res.message);
-        }
+        // if (res.message) {
+        //   throw Error(res.message);
+        // }
 
         if (res?.access_token) {
           return {
